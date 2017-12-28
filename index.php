@@ -1,53 +1,55 @@
 <?php
-$menu = [
+$menu = 
 	[
-		'url' => '/',
-		'title' => 'Games',
-		'sub_menu' => 
-			[	
-				[
-				'url' => '/halflife',
-				'title' => 'Half-Life'
-				],
-				[
-				'url' => '/halflife2',
-				'title' => 'Half-Life 2'
-				],
-				[
-				'url' => '/homm3',
-				'title' => 'Heroes of Might and Magic III'
-				],
-				[
-				'url' => '/deusex',
-				'title' => 'Deus Ex'
-				],
-				[
-				'url' => '/exmachina',
-				'title' => 'Ex Machina'
-				]
+		[
+			'url' => '/',
+			'title' => 'Games',
+			'sub_menu' => 
+				[	
+					[
+						'url' => '/halflife',
+						'title' => 'Half-Life'
+					],
+					[
+						'url' => '/halflife2',
+						'title' => 'Half-Life 2'
+					],
+					[
+						'url' => '/homm3',
+						'title' => 'Heroes of Might and Magic III'
+					],
+					[
+						'url' => '/deusex',
+						'title' => 'Deus Ex'
+					],
+					[
+						'url' => '/exmachina',
+						'title' => 'Ex Machina'
+					]
 
-			]
-	],
-	[
-		'url' => '/company',
-		'title' => 'Company'
-	],
-	[
-		'url' => '/jobs',
-		'title' => 'Jobs'
-	],
-	[
-		'url' => '/news',
-		'title' => 'News'
-	],
-	[
-		'url' => '/contacts',
-		'title' => 'Contacts'
-	],
-	[
-		'url' => '/download',
-		'title' => 'Download',
-		'sub_menu' => [
+				]
+		],
+		[
+			'url' => '/company',
+			'title' => 'Company'
+		],
+		[
+			'url' => '/jobs',
+			'title' => 'Jobs'
+		],
+		[
+			'url' => '/news',
+			'title' => 'News'
+		],
+		[
+			'url' => '/contacts',
+			'title' => 'Contacts'
+		],
+		[
+			'url' => '/download',
+			'title' => 'Download',
+			'sub_menu' => 
+			[
 				[
 					'url' => '/drivers',
 					'title' => 'Drivers'
@@ -56,22 +58,24 @@ $menu = [
 					'url' => '/documentation',
 					'title' => 'Documentation',
 					'sub_sub_menu' => 
-					[
-						'url' => '/solutions',
-						'title' => 'Solutions',
-					],
-					[
-						'url' => '/datasheets',
-						'title' => 'Datasheets',
-					],
-					[
-						'url' => '/licenses',
-						'title' => 'Licenses',
+						[
+							[
+								'url' => '/solutions',
+								'title' => 'Solutions',
+							],
+							[
+								'url' => '/datasheets',
+								'title' => 'Datasheets',
+							],
+							[
+								'url' => '/licenses',
+								'title' => 'Licenses',
+							]
 					]
 				]
+			]
 		]
-	]
-];
+	];
 ?>
 <!DOCTYPE HTML>
 <!--
@@ -113,21 +117,24 @@ $menu = [
 												<a href="<?=$sub_item['url']?>"><?=$sub_item['title']?></a>
 												<?php if(isset($sub_item['sub_sub_menu']) AND !empty($sub_item['sub_sub_menu'])) { ?>
 												<ul>
-													<?php	foreach($sub_item['sub_sub_menu'] as $sub_item) { ?>	
+													<?php	foreach($sub_item['sub_sub_menu'] as $sub_sub_item) { ?>	
+													<li>
+														 	<a href="<?=$sub_sub_item['url']?>"><?=$sub_sub_item['title']?></a>
+													</li>
+													<?php } ?>	
 												</ul>
+												<?php } ?>
 											</li>
-											<ul>
-											 <li>
-											 	<a href="<?=$sub_sub_menu['url']?>"><?=$sub_sub_menu['item']?></a>
-									</li>
+											<?php } ?>
 										</ul>
+										<?php } ?>
+									</li>
 									<?php } ?>
 								</ul>
-										<?php } ?>
+										
 									<!-- </li>	 -->
-								<?php } ?>
-								<?php } ?>
-								<?php } ?>
+							
+								
 
 
 
@@ -139,7 +146,7 @@ $menu = [
 											<!-- <li><a href="#">Lorem ipsum</a></li>
 											<li><a href="#">Magna veroeros</a></li>
 											<li><a href="#">Etiam nisl</a></li> -->
-											<li>
+											<!-- <li> -->
 												<!-- <a href="#">Sed consequat</a>
 												<ul>
 													<li><a href="#">Lorem dolor</a></li>
