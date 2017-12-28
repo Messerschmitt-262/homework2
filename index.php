@@ -1,3 +1,78 @@
+<?php
+$menu = [
+	[
+		'url' => '/',
+		'title' => 'Games',
+		'sub_menu' => 
+			[	
+				[
+				'url' => '/halflife',
+				'title' => 'Half-Life'
+				],
+				[
+				'url' => '/halflife2',
+				'title' => 'Half-Life 2'
+				],
+				[
+				'url' => '/homm3',
+				'title' => 'Heroes of Might and Magic III'
+				],
+				[
+				'url' => '/deusex',
+				'title' => 'Deus Ex'
+				],
+				[
+				'url' => '/exmachina',
+				'title' => 'Ex Machina'
+				]
+
+			]
+	],
+	[
+		'url' => '/company',
+		'title' => 'Company'
+	],
+	[
+		'url' => '/jobs',
+		'title' => 'Jobs'
+	],
+	[
+		'url' => '/news',
+		'title' => 'News'
+	],
+	[
+		'url' => '/contacts',
+		'title' => 'Contacts'
+	],
+	[
+		'url' => '/download',
+		'title' => 'Download',
+		'sub_menu' => [
+				[
+					'url' => '/drivers',
+					'title' => 'Drivers'
+				],
+				[
+					'url' => '/documentation',
+					'title' => 'Documentation',
+					'sub_sub_menu' => 
+					[
+						'url' => '/solutions',
+						'title' => 'Solutions',
+					],
+					[
+						'url' => '/datasheets',
+						'title' => 'Datasheets',
+					],
+					[
+						'url' => '/licenses',
+						'title' => 'Licenses',
+					]
+				]
+		]
+	]
+];
+?>
 <!DOCTYPE HTML>
 <!--
 	Escape Velocity by HTML5 UP
@@ -29,15 +104,43 @@
 						<!-- Nav -->
 							<nav id="nav">
 								<ul>
-									<li class="current"><a href="index.html">Home</a></li>
-									<li>
-										<a href="#">Dropdown</a>
+									<?php	foreach($menu as $item) { ?>
+									<li><a href="<?=$item['url'] ?>"><?=$item['title']?></a>
+										<?php if(isset($item['sub_menu']) AND !empty($item['sub_menu'])) { ?>
 										<ul>
-											<li><a href="#">Lorem ipsum</a></li>
-											<li><a href="#">Magna veroeros</a></li>
-											<li><a href="#">Etiam nisl</a></li>
+											<?php	foreach($item['sub_menu'] as $sub_item) { ?>
 											<li>
-												<a href="#">Sed consequat</a>
+												<a href="<?=$sub_item['url']?>"><?=$sub_item['title']?></a>
+												<?php if(isset($sub_item['sub_sub_menu']) AND !empty($sub_item['sub_sub_menu'])) { ?>
+												<ul>
+													<?php	foreach($sub_item['sub_sub_menu'] as $sub_item) { ?>	
+												</ul>
+											</li>
+											<ul>
+											 <li>
+											 	<a href="<?=$sub_sub_menu['url']?>"><?=$sub_sub_menu['item']?></a>
+									</li>
+										</ul>
+									<?php } ?>
+								</ul>
+										<?php } ?>
+									<!-- </li>	 -->
+								<?php } ?>
+								<?php } ?>
+								<?php } ?>
+
+
+
+
+									
+									
+										
+									
+											<!-- <li><a href="#">Lorem ipsum</a></li>
+											<li><a href="#">Magna veroeros</a></li>
+											<li><a href="#">Etiam nisl</a></li> -->
+											<li>
+												<!-- <a href="#">Sed consequat</a>
 												<ul>
 													<li><a href="#">Lorem dolor</a></li>
 													<li><a href="#">Amet consequat</a></li>
@@ -52,7 +155,7 @@
 									<li><a href="left-sidebar.html">Left Sidebar</a></li>
 									<li><a href="right-sidebar.html">Right Sidebar</a></li>
 									<li><a href="no-sidebar.html">No Sidebar</a></li>
-								</ul>
+								</ul> -->
 							</nav>
 
 					</div>
