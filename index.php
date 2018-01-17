@@ -1,4 +1,5 @@
 <?php
+//menu description
 $menu = 
 	[
 		[
@@ -76,6 +77,81 @@ $menu =
 			]
 		]
 	];
+//features list description
+$features = [
+
+	[
+		'icon' => 'fa-comment',
+		'name' => 'Mattis velit diam vulputate',
+		'description' => 'Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate. Eget mattis at, laoreet vel velit lorem.'
+	],
+
+	[
+		'icon' => 'fa-refresh',
+		'name' => 'Lorem ipsum dolor sit veroeros',
+		'description' => 'Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate. Eget mattis at, laoreet vel velit lorem.'
+	],
+
+	[
+		'icon' => 'fa-picture-o',
+		'name' => 'Pretium phasellus justo lorem',
+		'description' => 'Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate. Eget mattis at, laoreet vel velit lorem.'
+	],
+
+	[
+		'icon' => 'fa-cog',
+		'name' => 'Tempus sed pretium orci',
+		'description' => 'Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate. Eget mattis at, laoreet vel velit lorem.'
+	],
+
+	[
+		'icon' => 'fa-wrench',
+		'name' => 'Aliquam consequat et feugiat',
+		'description' => 'Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate. Eget mattis at, laoreet vel velit lorem.'
+	],
+
+	[
+		'icon' => 'fa-check',
+		'name' => 'Dolore laoreet aliquam mattis',
+		'description' => 'Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate. Eget mattis at, laoreet vel velit lorem.'
+	],
+
+];
+//contact description
+$contact = [
+
+	[
+		'icon' => 'fa-home',
+		'name' => 'Mailing Address',
+		'description' => 'Untitled Corporation<br /> 1234 Somewhere Rd #987<br />							Nashville, TN 00000-0000'
+	],
+
+	[
+		'icon' => 'fa-comment',
+		'name' => 'Social',
+		'link' =>
+			[	
+		 		'@untitled-corp',
+				'linkedin.com/untitled',
+				'facebook.com/untitled'
+			]
+	],
+
+	[
+		'icon' => 'fa-envelope',
+		'name' => 'Email',
+		'link' => 
+			[
+				'info@untitled.tld'
+			]
+	],
+
+	[
+		'icon' => 'fa-phone',
+		'name' => 'Phone',
+		'description' => '(000) 555-0000'
+	]
+];
 ?>
 <!DOCTYPE HTML>
 <!--
@@ -131,38 +207,6 @@ $menu =
 									</li>
 									<?php } ?>
 								</ul>
-										
-									<!-- </li>	 -->
-							
-								
-
-
-
-
-									
-									
-										
-									
-											<!-- <li><a href="#">Lorem ipsum</a></li>
-											<li><a href="#">Magna veroeros</a></li>
-											<li><a href="#">Etiam nisl</a></li> -->
-											<!-- <li> -->
-												<!-- <a href="#">Sed consequat</a>
-												<ul>
-													<li><a href="#">Lorem dolor</a></li>
-													<li><a href="#">Amet consequat</a></li>
-													<li><a href="#">Magna phasellus</a></li>
-													<li><a href="#">Etiam nisl</a></li>
-													<li><a href="#">Sed feugiat</a></li>
-												</ul>
-											</li>
-											<li><a href="#">Nisl tempus</a></li>
-										</ul>
-									</li>
-									<li><a href="left-sidebar.html">Left Sidebar</a></li>
-									<li><a href="right-sidebar.html">Right Sidebar</a></li>
-									<li><a href="no-sidebar.html">No Sidebar</a></li>
-								</ul> -->
 							</nav>
 
 					</div>
@@ -203,55 +247,28 @@ $menu =
 									<p>Feugiat dolor nullam orci pretium phasellus justo</p>
 								</header>
 								<div class="feature-list">
-									<div class="row">
+									<?php 
+										$features_items = count($features);
+										for($i = 0; $i < $features_items; $i++):
+									?>
+										<?php if($i % 2 == 0):?>
+											<div class="row">
+										<?php endif; ?>
 										<div class="6u 12u(mobile)">
 											<section>
-												<h3 class="icon fa-comment">Mattis velit diam vulputate</h3>
-												<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate. Eget mattis at, laoreet vel velit lorem.</p>
+												<h3 class="icon <?=$features[$i]['icon']?>"><?=$features[$i]['name']?></h3>
+												<p><?=$features[$i]['description']?></p>
 											</section>
 										</div>
-										<div class="6u 12u(mobile)">
-											<section>
-												<h3 class="icon fa-refresh">Lorem ipsum dolor sit veroeros</h3>
-												<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate. Eget mattis at, laoreet vel velit lorem.</p>
-											</section>
-										</div>
-									</div>
-									<div class="row">
-										<div class="6u 12u(mobile)">
-											<section>
-												<h3 class="icon fa-picture-o">Pretium phasellus justo lorem</h3>
-												<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate. Eget mattis at, laoreet vel velit lorem.</p>
-											</section>
-										</div>
-										<div class="6u 12u(mobile)">
-											<section>
-												<h3 class="icon fa-cog">Tempus sed pretium orci</h3>
-												<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate. Eget mattis at, laoreet vel velit lorem.</p>
-											</section>
-										</div>
-									</div>
-									<div class="row">
-										<div class="6u 12u(mobile)">
-											<section>
-												<h3 class="icon fa-wrench">Aliquam consequat et feugiat</h3>
-												<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate. Eget mattis at, laoreet vel velit lorem.</p>
-											</section>
-										</div>
-										<div class="6u 12u(mobile)">
-											<section>
-												<h3 class="icon fa-check">Dolore laoreet aliquam mattis</h3>
-												<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate. Eget mattis at, laoreet vel velit lorem.</p>
-											</section>
-										</div>
-									</div>
-								</div>
+										<?php if(!($i % 2 == 0) OR ($i+1 == $features_items)):?>
+											</div>
+										<?php endif;?>
+										<?php	endfor;	?>
 								<ul class="actions actions-centered">
 									<li><a href="#" class="button style1 big">Get Started</a></li>
 									<li><a href="#" class="button style2 big">More Info</a></li>
 								</ul>
 							</section>
-
 					</div>
 				</div>
 
@@ -341,50 +358,39 @@ $menu =
 
 								<!-- Contact -->
 									<section class="feature-list small">
+										<?php
+											$contact_items = count($contact);
+											for($i = 0; i < $contact_items; $i++):
+										?>
+											<?php if($i % 2 == 0):?>
 										<div class="row">
+											<?php endif;?>
 											<div class="6u 12u(mobile)">
 												<section>
-													<h3 class="icon fa-home">Mailing Address</h3>
+													<h3 class="icon <?=$contact[$i]['icon']?>"><?= $contact[$i]['name'] ?></h3>
 													<p>
-														Untitled Corporation<br />
-														1234 Somewhere Rd #987<br />
-														Nashville, TN 00000-0000
+														<?php if (isset($contact[$i]['link']) AND !empty($contact[$i]['link'])): ?>
+															<?php foreach ($contact[$i]['link'] as $link): ?>
+																<a href="#"><?=$link?></a><br />
+															<?php endforeach ?>
+														<?php endif ?>
+														<?php 
+															if(isset($contact[$i]['description']) and !empty($contact[$i]['description'])){
+															echo $contact[$i]['description'];
+															}
+														?>
+														
 													</p>
 												</section>
 											</div>
-											<div class="6u 12u(mobile)">
-												<section>
-													<h3 class="icon fa-comment">Social</h3>
-													<p>
-														<a href="#">@untitled-corp</a><br />
-														<a href="#">linkedin.com/untitled</a><br />
-														<a href="#">facebook.com/untitled</a>
-													</p>
-												</section>
-											</div>
-										</div>
-										<div class="row">
-											<div class="6u 12u(mobile)">
-												<section>
-													<h3 class="icon fa-envelope">Email</h3>
-													<p>
-														<a href="#">info@untitled.tld</a>
-													</p>
-												</section>
-											</div>
-											<div class="6u 12u(mobile)">
-												<section>
-													<h3 class="icon fa-phone">Phone</h3>
-													<p>
-														(000) 555-0000
-													</p>
-												</section>
-											</div>
-										</div>
+											<?php if(!($i % 2 == 0) OR ($i+1 == $contact_items)): ?>
+												</div>
+											<?php endif ?>
+										<?php endfor ?>
 									</section>
-
-							</div>
-						</div>
+											</div>
+										</div>
+										
 						<hr />
 					</div>
 					<div id="copyright">

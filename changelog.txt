@@ -1,0 +1,13 @@
+
+## [0.3.1] - 2018-01-17
+### Fixed - Contact list render.
+
+## [0.3.0] - 2018-01-17
+### Added - Contact list render.
+
+## [0.2.0] - 2018-01-16
+### Added - Features list render.
+## [0.1.1] - 2017-12-28
+### Fixed - Main menu render.
+## [0.1.0] - 2017-12-27
+### Added - Dynamic main menu render.
