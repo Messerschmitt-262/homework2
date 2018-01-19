@@ -360,7 +360,7 @@ $contact = [
 									<section class="feature-list small">
 										<?php
 											$contact_items = count($contact);
-											for($i = 0; i < $contact_items; $i++):
+											for($i = 0; $i < $contact_items; $i++):
 										?>
 											<?php if($i % 2 == 0):?>
 										<div class="row">
