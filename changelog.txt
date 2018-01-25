@@ -1,4 +1,4 @@
-## [0.4.1] - 2018-01-24
+## [0.4.1] - 2018-01-25
 ### Fixed - Contact form request log format changed from *.csv to *.txt.
 ## [0.4.0] - 2018-01-24
 ### Added - Contact form handle request.

@@ -17,11 +17,10 @@
 	}
 	else
 	{
-		$filler = "====================";
+		$filler = "======================";
 		$fh = fopen('requests.txt', 'a');
 		$date = date('F d, Y, H:i');
-		$row = [$date, $name, $email, $message, $filler];
-		$line = $date."\r\n"."Имя: ".$name."\r\n"."Email: ".$email."\r\n".$message."\""."\r\n"."======================"."\r\n";
+		$line = $date."\r\n"."Имя: ".$name."\r\n"."Email: ".$email."\r\n".$message."\""."\r\n".$filler."\r\n";
 		fwrite($fh, $line);	
 		fclose($fh);
 		header('Location: index.php');
