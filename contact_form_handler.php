@@ -17,12 +17,12 @@
 	}
 	else
 	{
-		$fh = fopen('requests.csv', 'a');
-		$date = date('d.m.Y H:i');
-		$row = [$date, $name, $email, $message];
-
-		fputcsv($fh, $row);
-
+		$filler = "====================";
+		$fh = fopen('requests.txt', 'a');
+		$date = date('F d, Y, H:i');
+		$row = [$date, $name, $email, $message, $filler];
+		$line = $date."\r\n"."Имя: ".$name."\r\n"."Email: ".$email."\r\n".$message."\""."\r\n"."======================"."\r\n";
+		fwrite($fh, $line);	
 		fclose($fh);
 		header('Location: index.php');
 	}
